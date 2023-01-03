@@ -1,0 +1,664 @@
+import java.awt.*;  
+import java.awt.event.*;  
+class AEvent extends Frame implements ActionListener{  
+TextField tf;  
+AEvent(){  
+  
+//create components  
+tf=new TextField();  
+tf.setBounds(60,50,170,20);  
+Button b=new Button("click me");  
+b.setBounds(100,120,80,30);  
+  
+//register listener  
+b.addActionListener(this);//passing current instance  
+  
+//add components and set size, layout and visibility  
+add(b);add(tf);  
+setSize(300,300);  
+setLayout(null);  
+setVisible(true);  
+}  
+public void actionPerformed(ActionEvent e){  
+tf.setText("Welcome");  
+}  
+public static void main(String args[]){  
+new AEvent();  
+}  
+}  // importing Java AWT class  
+import java.awt.*;    
+  
+// extending Frame class to our class AWTExample1  
+public class AWTExample1 extends Frame {    
+  
+   // initializing using constructor  
+   AWTExample1() {  
+  
+      // creating a button   
+      Button b = new Button("Click Me!!");  
+  
+      // setting button position on screen  
+      b.setBounds(30,100,80,30);  
+  
+      // adding button into frame    
+      add(b);  
+  
+      // frame size 300 width and 300 height    
+      setSize(300,300);  
+  
+      // setting the title of Frame  
+      setTitle("This is our basic AWT example");   
+          
+      // no layout manager   
+      setLayout(null);   
+  
+      // now frame will be visible, by default it is not visible    
+      setVisible(true);  
+}    
+  
+// main method  
+public static void main(String args[]) {   
+  
+// creating instance of Frame class   
+AWTExample1 f = new AWTExample1();    
+  
+}  
+  
+}// importing necessary libraries  
+import java.awt.*;    
+import java.awt.event.*;    
+public class ButtonExample3 {    
+public static void main(String[] args) {    
+    // create instance of frame with the label   
+    Frame f = new Frame("Button Example");    
+    final TextField tf=new TextField();    
+    tf.setBounds(50,50, 150,20);  
+    // create instance of button with label  
+    Button b=new Button("Click Here");    
+    // set the position for the button in frame   
+    b.setBounds(50,100,60,30);   
+    b.addActionListener(new ActionListener() {    
+    public void actionPerformed (ActionEvent e) {    
+            tf.setText("Welcome to Javatpoint.");    
+        }    
+    });  
+// adding button the frame  
+    f.add(b);  
+// adding textfield the frame  
+    f.add(tf);    
+// setting size, layout and visibility   
+    f.setSize(400,400);    
+    f.setLayout(null);    
+    f.setVisible(true);     
+}    
+}    import java.awt.*;    
+public class ButtonExample {    
+public static void main (String[] args) {   
+  
+    // create instance of frame with the label   
+    Frame f = new Frame("Button Example");    
+  
+    // create instance of button with label  
+    Button b = new Button("Click Here");   
+  
+    // set the position for the button in frame   
+    b.setBounds(50,100,80,30);    
+  
+    // add button to the frame  
+    f.add(b);    
+    // set size, layout and visibility of frame  
+    f.setSize(400,400);    
+    f.setLayout(null);    
+    f.setVisible(true);     
+}    
+}    import java.awt.*;
+import java.awt.event.*;
+ 
+class Calculator implements ActionListener
+{
+//Declaring Objects
+
+Frame f=new Frame();
+Label l1=new Label("First Number");
+Label l2=new Label("Second Number");
+Label l3=new Label("Result");
+TextField t1=new TextField();
+TextField t2=new TextField();
+TextField t3=new TextField();
+Button b1=new Button("Add");
+Button b2=new Button("Sub");
+Button b3=new Button("Mul");
+Button b4=new Button("Div");
+Button b5=new Button("Cancel");
+Calculator()
+{
+//Giving Coordinates
+l1.setBounds(50,100,100,20);
+l2.setBounds(50,140,100,20);
+l3.setBounds(50,180,100,20);
+t1.setBounds(200,100,100,20);
+t2.setBounds(200,140,100,20);
+t3.setBounds(200,180,100,20);
+b1.setBounds(50,250,50,20);
+b2.setBounds(110,250,50,20);
+b3.setBounds(170,250,50,20);
+b4.setBounds(230,250,50,20);
+b5.setBounds(290,250,50,20);
+//Adding components to the frame
+f.add(l1);
+f.add(l2);
+f.add(l3);
+f.add(t1);
+f.add(t2);
+f.add(t3);
+f.add(b1);
+f.add(b2);
+f.add(b3);
+f.add(b4);
+f.add(b5);
+b1.addActionListener(this);
+b2.addActionListener(this);
+b3.addActionListener(this);
+b4.addActionListener(this);
+b5.addActionListener(this);
+f.setLayout(null);
+f.setVisible(true);
+f.setSize(400,350);
+}
+public void actionPerformed(ActionEvent e)
+{
+int n1=Integer.parseInt(t1.getText());
+int n2=Integer.parseInt(t2.getText());
+if(e.getSource()==b1)
+{
+t3.setText(String.valueOf(n1+n2));
+}
+if(e.getSource()==b2)
+{
+t3.setText(String.valueOf(n1-n2));
+}
+if(e.getSource()==b3)
+{
+t3.setText(String.valueOf(n1*n2));
+}
+if(e.getSource()==b4)
+{
+t3.setText(String.valueOf(n1/n2));
+}
+if(e.getSource()==b5)
+{
+System.exit(0);
+}
+}
+public static void main(String...s)
+{
+new Calculator();
+}
+}
+import javax.swing.*;  
+public class FirstSwingExample {  
+public static void main(String[] args) {  
+JFrame f=new JFrame();//creating instance of JFrame  
+          
+JButton b=new JButton("click");//creating instance of JButton  
+b.setBounds(130,100,100, 40);//x axis, y axis, width, height  
+          
+f.add(b);//adding button in JFrame  
+          
+f.setSize(400,500);//400 width and 500 height  
+f.setLayout(null);//using no layout managers  
+f.setVisible(true);//making the frame visible  
+}  
+} /*package whatever //do not write package name here */
+
+import java.io.*;
+import javax.swing.*;
+class GFG1 {
+	public static void main (String[] args) {
+	JFrame frame = new JFrame();//creating instance of JFrame
+		
+JButton button=new JButton(" GFG WebSite Click");//creating instance of JButton
+button.setBounds(150,200,220, 50);//x axis, y axis, width, height
+		
+frame.add(button);//adding button in JFrame
+		
+frame.setSize(500,600);//400 width and 500 height
+frame.setLayout(null);//using no layout managers
+frame.setVisible(true);//making the frame visible
+	}
+}
+import java.awt.event.*;  
+import javax.swing.*;    
+public class JButtonExample1 {  
+public static void main(String[] args) {  
+    JFrame f=new JFrame("Button Example");  
+    final JTextField tf=new JTextField();  
+    tf.setBounds(50,50, 150,20);  
+    JButton b=new JButton("Click Here");  
+    b.setBounds(50,100,95,30);  
+    b.addActionListener(new ActionListener(){  
+public void actionPerformed(ActionEvent e){  
+            tf.setText("Welcome to Javatpoint.");  
+        }  
+    });  
+    f.add(b);f.add(tf);  
+    f.setSize(400,400);  
+    f.setLayout(null);  
+    f.setVisible(true);   
+}  
+}  import javax.swing.*;    
+public class JButtonExample {  
+public static void main(String[] args) {  
+    JFrame f=new JFrame("Button Example");  
+    JButton b=new JButton("Click Here");  
+    b.setBounds(50,100,95,30);  
+    f.add(b);  
+    f.setSize(400,400);  
+    f.setLayout(null);  
+    f.setVisible(true);   
+}  
+}  import javax.swing.*;  
+class JLabelExample  
+{  
+public static void main(String args[])  
+    {  
+    JFrame f= new JFrame("Label Example");  
+    JLabel l1,l2;  
+    l1=new JLabel("First Label.");  
+    l1.setBounds(50,50, 100,30);  
+    l2=new JLabel("Second Label.");  
+    l2.setBounds(50,100, 100,30);  
+    f.add(l1); f.add(l2);  
+    f.setSize(300,300);  
+    f.setLayout(null);  
+    f.setVisible(true);  
+    }  
+    }  import javax.swing.*;  
+class JTextFieldExample1  
+{  
+public static void main(String args[])  
+    {  
+    JFrame f= new JFrame("TextField Example");  
+    JTextField t1,t2;  
+    t1=new JTextField("Welcome to Javatpoint.");  
+    t1.setBounds(50,100, 200,30);  
+    t2=new JTextField("AWT Tutorial");  
+    t2.setBounds(50,150, 200,30);  
+    f.add(t1); f.add(t2);  
+    f.setSize(400,400);  
+    f.setLayout(null);  
+    f.setVisible(true);  
+    }  
+    }  import javax.swing.*;  
+import java.awt.event.*;  
+public class JTextFieldExample2 implements ActionListener{  
+    JTextField tf1,tf2,tf3;  
+    JButton b1,b2;  
+    TextFieldExample(){  
+        JFrame f= new JFrame();  
+        tf1=new JTextField();  
+        tf1.setBounds(50,50,150,20);  
+        tf2=new JTextField();  
+        tf2.setBounds(50,100,150,20);  
+        tf3=new JTextField();  
+        tf3.setBounds(50,150,150,20);  
+        tf3.setEditable(false);   
+        b1=new JButton("+");  
+        b1.setBounds(50,200,50,50);  
+        b2=new JButton("-");  
+        b2.setBounds(120,200,50,50);  
+        b1.addActionListener(this);  
+        b2.addActionListener(this);  
+        f.add(tf1);f.add(tf2);f.add(tf3);f.add(b1);f.add(b2);  
+        f.setSize(300,300);  
+        f.setLayout(null);  
+        f.setVisible(true);  
+    }         
+    public void actionPerformed(ActionEvent e) {  
+        String s1=tf1.getText();  
+        String s2=tf2.getText();  
+        int a=Integer.parseInt(s1);  
+        int b=Integer.parseInt(s2);  
+        int c=0;  
+        if(e.getSource()==b1){  
+            c=a+b;  
+        }else if(e.getSource()==b2){  
+            c=a-b;  
+        }  
+        String result=String.valueOf(c);  
+        tf3.setText(result);  
+    }  
+public static void main(String[] args) {  
+    new TextFieldExample();  
+} }  mport java.awt.*;    
+  
+public class LabelExample {    
+public static void main(String args[]){   
+  
+    // creating the object of Frame class and Label class  
+    Frame f = new Frame ("Label example");  
+    Label l1, l2;    
+  
+    // initializing the labels   
+    l1 = new Label ("First Label.");   
+    l2 = new Label ("Second Label.");   
+  
+    // set the location of label  
+    l1.setBounds(50, 100, 100, 30);    
+    l2.setBounds(50, 150, 100, 30);  
+  
+    // adding labels to the frame    
+    f.add(l1);  
+    f.add(l2);   
+  
+    // setting size, layout and visibility of frame   
+    f.setSize(400,400);    
+    f.setLayout(null);    
+    f.setVisible(true);    
+}    
+}    //Simple example of Swing by inheritance
+
+
+import javax.swing.*;  
+public class Simple2 extends JFrame{//inheriting JFrame  
+JFrame f;  
+Simple2(){  
+JButton b=new JButton("click");//create button  
+b.setBounds(130,100,100, 40);  
+          
+add(b);//adding button on frame  
+setSize(400,500);  
+setLayout(null);  
+setVisible(true);  
+}  
+public static void main(String[] args) {  
+new Simple2();  
+}}  //Inter Thread Communication
+class Customer{
+int amount=10000;
+synchronized void withdraw(int amount){System.out.println("going to withdraw...");
+if(this.amount<amount){
+System.out.println("Less balance; waiting for deposit...");
+try{wait();}catch(Exception e){}
+}
+this.amount-=amount;
+System.out.println("withdraw completed...");
+}
+synchronized void deposit(int amount){
+System.out.println("going to deposit...");
+this.amount+=amount;
+System.out.println("deposit completed... ");
+notify();
+}
+}
+class Test{
+public static void main(String args[]){
+final Customer c=new Customer();
+new Thread(){
+public void run(){c.withdraw(15000);}
+}.start();
+new Thread(){
+public void run(){c.deposit(10000);}
+}.start();
+}}
+class TestRun2 extends Thread{  
+ public void run(){  
+  for(int i=1;i<5;i++){  
+    try{Thread.sleep(500);}catch(InterruptedException e){System.out.println(e);}  
+    System.out.println(i);  
+  }  
+ }  
+ public static void main(String args[]){  
+  TestRun2 t1=new TestRun2();  
+  TestRun2 t2=new TestRun2();  
+   
+  t1.start();  
+  t2.start();  
+ }  
+} 
+//no synchronization
+class Table{
+void printTable(int n){//method not synchronized
+for(int i=1;i<=5;i++){
+System.out.println(n*i);
+try{
+Thread.sleep(400);
+}catch(Exception e){System.out.println(e);}
+}
+}
+}
+class MyThread1 extends Thread{
+Table t;
+MyThread1(Table t){
+this.t=t;
+}
+public void run(){
+t.printTable(5);
+}
+}
+class MyThread2 extends Thread{
+Table t;
+MyThread2(Table t){
+this.t=t;
+}
+public void run(){
+t.printTable(100);
+}}
+class TestSynchronization1{
+public static void main(String args[]){
+Table obj = new Table();//only one object
+MyThread1 t1=new MyThread1(obj);
+MyThread2 t2=new MyThread2(obj);
+t1.start();
+t2.start();
+}
+}
+//Synchronization
+//example of java synchronized method
+class Table{
+synchronized void printTable(int n){//synchronized method
+for(int i=1;i<=5;i++){
+System.out.println(n*i);
+try{
+Thread.sleep(400);
+}catch(Exception e){System.out.println(e);}
+}
+}
+}
+class MyThread1 extends Thread{
+Table t;
+MyThread1(Table t){
+this.t=t;}
+public void run(){
+t.printTable(5);
+}
+}
+class MyThread2 extends Thread{
+Table t;
+MyThread2(Table t){
+this.t=t;
+}
+public void run(){
+t.printTable(100);
+}
+}
+public class TestSynchronization2{
+public static void main(String args[]){
+Table obj = new Table();//only one object
+MyThread1 t1=new MyThread1(obj);
+MyThread2 t2=new MyThread2(obj);
+t1.start();
+t2.start();
+}
+}
+import java.awt.*;   
+public class TextFieldExample1 {  
+    // main method  
+    public static void main(String args[]) {    
+    // creating a frame  
+    Frame f = new Frame("TextField Example");    
+  
+    // creating objects of textfield  
+    TextField t1, t2;    
+    // instantiating the textfield objects  
+    // setting the location of those objects in the frame  
+    t1 = new TextField("Welcome to Javatpoint.");    
+    t1.setBounds(50, 100, 200, 30);    
+    t2 = new TextField("AWT Tutorial");    
+    t2.setBounds(50, 150, 200, 30);    
+    // adding the components to frame  
+    f.add(t1);  
+    f.add(t2);   
+    // setting size, layout and visibility of frame   
+    f.setSize(400,400);    
+    f.setLayout(null);    
+    f.setVisible(true);    
+}    
+}    // importing necessary libraries  
+import java.awt.*;    
+import java.awt.event.*;    
+// Our class extends Frame class and implements ActionListener interface  
+public class TextFieldExample2 extends Frame implements ActionListener {    
+    // creating instances of TextField and Button class  
+    TextField tf1, tf2, tf3;    
+    Button b1, b2;   
+    // instantiating using constructor   
+    TextFieldExample2() {    
+        // instantiating objects of text field and button  
+        // setting position of components in frame  
+        tf1 = new TextField();    
+        tf1.setBounds(50, 50, 150, 20);    
+        tf2 = new TextField();    
+        tf2.setBounds(50, 100, 150, 20);    
+        tf3 = new TextField();    
+        tf3.setBounds(50, 150, 150, 20);  
+        tf3.setEditable(false);   
+        b1 = new Button("+");    
+        b1.setBounds(50, 200, 50, 50);  
+        b2 = new Button("-");    
+        b2.setBounds(120,200,50,50);    
+        // adding action listener  
+        b1.addActionListener(this);    
+        b2.addActionListener(this);    
+        // adding components to frame  
+        add(tf1);  
+        add(tf2);  
+        add(tf3);  
+        add(b1);  
+        add(b2);   
+        // setting size, layout and visibility of frame   
+        setSize(300,300);    
+        setLayout(null);    
+        setVisible(true);    
+    }  
+    // defining the actionPerformed method to generate an event on buttons         
+    public void actionPerformed(ActionEvent e) {    
+        String s1 = tf1.getText();    
+        String s2 = tf2.getText();    
+        int a = Integer.parseInt(s1);    
+        int b = Integer.parseInt(s2);    
+        int c = 0;    
+        if (e.getSource() == b1){    
+            c = a + b;    
+        }  
+        else if (e.getSource() == b2){    
+            c = a - b;    
+        }    
+        String result = String.valueOf(c);    
+        tf3.setText(result);    
+    }   
+// main method   
+public static void main(String[] args) {    
+    new TextFieldExample2();    
+}    
+}    // Java Program to enter name and password
+// using JTextField and JPasswordField
+import java.awt.event.*;
+import java.awt.*;
+import javax.swing.*;
+class Text extends JFrame implements ActionListener {
+	// JTextField
+	static JTextField t;
+
+	// JPasswordField
+	static JPasswordField pass;
+
+	// JFrame
+	static JFrame f;
+
+	// JButton
+	static JButton b;
+
+	// label to display text
+	static JLabel l;
+
+	// default constructor
+	text()
+	{
+	}
+
+	// main class
+	public static void main(String[] args)
+	{
+		// create a new frame to store text field and button
+		f = new JFrame("textfield");
+
+		// create a label to display text
+		l = new JLabel("nothing entered");
+
+		// create a new button
+		b = new JButton("submit");
+
+		// create a object of the text class
+		text te = new text();
+
+		// addActionListener to button
+		b.addActionListener(te);
+
+		// create a object of JTextField with 16 columns and initial text
+		t = new JTextField("enter name", 16);
+
+		// create a object of passwordField with 16 columns
+		pass = new JPasswordField(16);
+
+		// create an object of font type
+		Font fo = new Font("Serif", Font.ITALIC, 20);
+
+		// set the font of the textfield
+		t.setFont(fo);
+
+		// create a panel to add buttons and textfield
+		JPanel p = new JPanel();
+
+		// add buttons and textfield to panel
+		p.add(t);
+		p.add(pass);
+		p.add(b);
+		p.add(l);
+
+		// add panel to frame
+		f.add(p);
+
+		// set the size of frame
+		f.setSize(300, 300);
+
+		f.show();
+	}
+
+	// if the button is pressed
+	public void actionPerformed(ActionEvent e)
+	{
+		String s = e.getActionCommand();
+		if (s.equals("submit")) {
+			// set the text of the label to the text of the field
+			l.setText("name = " + t.getText() + "\t Password = " + pass.getText());
+
+			// set the text of field to blank
+			t.setText(" ");
+
+			// set the text of password field to blank
+			pass.setText("");
+		}
+	}
+}
+1
